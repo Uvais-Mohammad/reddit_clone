@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Reddit Clone',
       theme: Pallette.darkModeAppTheme,
       home: const LoginScreen(),
