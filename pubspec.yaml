@@ -9,8 +9,12 @@ environment:
   sdk: ">=2.18.2 <3.0.0"
 
 dependencies:
+  firebase_auth: ^4.0.2
+  firebase_core: ^2.1.0
   flutter:
     sdk: flutter
+  flutter_riverpod: ^2.0.2
+  google_sign_in: ^5.4.2
 
 dev_dependencies:
   flutter_test:
