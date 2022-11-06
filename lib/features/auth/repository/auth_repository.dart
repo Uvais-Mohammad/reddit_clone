@@ -81,7 +81,7 @@ class AuthRepository {
       _fireStore.collection(FirebaseConstants.usersCollection);
 
   Stream<UserModel> _getUserData(String uid) => _users
-      .doc("jh")
+      .doc(uid)
       .snapshots()
       .map((event) => UserModel.fromMap(event.data() as Map<String, dynamic>));
 }
