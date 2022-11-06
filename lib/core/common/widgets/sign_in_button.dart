@@ -10,8 +10,8 @@ class SignInButton extends ConsumerWidget {
     Key? key,
   }) : super(key: key);
 
-  void signIn(WidgetRef ref) {
-    ref.read(authControllerProvider).googleSignIn();
+  void signIn(WidgetRef ref,BuildContext context) {
+    ref.read(authControllerProvider).googleSignIn(context);
   }
 
   @override
@@ -19,7 +19,7 @@ class SignInButton extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextButton(
-        onPressed: () => signIn(ref),
+        onPressed: () => signIn(ref,context),
         style: ElevatedButton.styleFrom(
           backgroundColor: Pallette.greyColor,
           shape: RoundedRectangleBorder(

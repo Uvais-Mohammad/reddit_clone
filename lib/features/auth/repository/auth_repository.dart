@@ -70,9 +70,9 @@ class AuthRepository {
       }
 
       return right(userModel);
-    } on FirebaseException catch (e) {
-      throw e.message!;
-    } catch (e) {
+    }
+    
+    catch (e) {
       return left(Failure(e.toString()));
     }
   }
@@ -80,9 +80,8 @@ class AuthRepository {
   CollectionReference get _users =>
       _fireStore.collection(FirebaseConstants.usersCollection);
 
-  Stream<UserModel> _getUserData(String uid) => _users.doc(uid).snapshots().map(
-        (event) => UserModel.fromMap(
-          event.data() as Map<String, dynamic>,
-        ),
-      );
+  Stream<UserModel> _getUserData(String uid) => _users
+      .doc("jh")
+      .snapshots()
+      .map((event) => UserModel.fromMap(event.data() as Map<String, dynamic>));
 }
