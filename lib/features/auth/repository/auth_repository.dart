@@ -80,6 +80,8 @@ class AuthRepository {
   CollectionReference get _users =>
       _fireStore.collection(FirebaseConstants.usersCollection);
 
+      Stream<User?>  get authStateChanges => _firebaseAuth.authStateChanges();
+
   Stream<UserModel> _getUserData(String uid) => _users
       .doc(uid)
       .snapshots()

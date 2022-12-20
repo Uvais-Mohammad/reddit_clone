@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: LocalizationStrings.appName,
       theme: Pallette.darkModeAppTheme,
-      routerDelegate: RoutemasterDelegate(routesBuilder: (context) => routes),
+      routerDelegate:
+          RoutemasterDelegate(routesBuilder: (context) => loggedOutRoutes),
       routeInformationParser: const RoutemasterParser(),
     );
   }
